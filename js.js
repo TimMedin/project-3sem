@@ -146,7 +146,7 @@ const papar = document.querySelector("#papar");
 
 
 cut.addEventListener("click", function() {
-console.log("ножиці");
+  user("ножиці")
 });
 
 
@@ -154,7 +154,7 @@ console.log(cut);
 
 
 stone.addEventListener("click", function () {
-console.log("камінь");
+user("камінь")
 });
 
 
@@ -163,16 +163,30 @@ console.log(stone);
 
 
 papar.addEventListener("click",function() {
-console.log("папір");
+  user("папір")
 });
 
 console.log(papar);
 
 
 function computerrr() {
-  console.log(Math.random() * 3); 
-  Math.floor(Math.random() * 3);
-  return Math.floor(Math.random() * 3);
+  const randomNumber = Math.floor(Math.random() * 3);
+  switch (randomNumber) {
+    case 0:
+      return "ножиці"
+    case 1:
+      return "камінь"
+    case 2:
+      return "папір"
+  }
+}
+
+function user(userInput) {
+  if (userInput == "папір" || userInput == "камінь" || userInput == "ножиці") {
+    return userInput
+  }
+  
+
 }
 
 
